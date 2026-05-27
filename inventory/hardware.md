@@ -9,24 +9,24 @@ Detailed specs for every piece of gear. Fill in the blanks (`_(specify)_`) with 
 ### UDM Pro Max
 - **Role:** Main router, firewall, IDS/IPS, UniFi Protect NVR
 - **Form factor:** 1U rackmount
-- **Storage:** _(specify HDD/SSD for Protect)_
+- **Storage:** _2x 4TB Seagate Skyhawk Surveillance Drives_
 - **Notes:** Runs UniFi Network + Protect controllers
 
 ### UniFi Switch Pro Max (USW Pro Max)
-- **Role:** Core L2/L3 switch
-- **Ports:** _(specify model — 16/24/48 port)_
-- **PoE budget:** _(specify W)_
-- **Uplinks:** _(SFP+ / 10GbE / 25GbE)_
+- **Role:** Main L2/L3 switch
+- **Ports:** _24 Port_
+- **PoE budget:** _400W_
+- **Uplinks:** _10G Uplink to UDM_
 
-### UniFi Flex Mini
+### UniFi Flex Mini 2.5G
 - **Role:** Edge switch for room
-- **Ports:** 5x 1GbE (1 uplink + 4 downlinks)
-- **PoE:** Powered via PoE from upstream switch
+- **Ports:** 5x 2.5GbE (1 uplink + 4 downlinks)
+- **PoE:** Powered via PoE from USW
 
 ### Cisco Catalyst 2960-X _(Lab — WIP)_
 - **Role:** Lab L2 switch
-- **Ports:** _(specify — 24/48 port)_
-- **IOS version:** _(specify)_
+- **Ports:** _48 Port_
+- **IOS version:** _N/A_
 - **Status:** Not yet racked / configured
 
 ### Cisco 1900 Series ISR _(Lab — WIP)_
