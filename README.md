@@ -6,7 +6,7 @@
 
 [![Status](https://img.shields.io/badge/status-active-brightgreen?style=for-the-badge)](.)
 [![Rack](https://img.shields.io/badge/rack-22RU-blue?style=for-the-badge)](docs/rack-layout.md)
-[![UPS](https://img.shields.io/badge/UPS-1500W%20Eaton-orange?style=for-the-badge)](inventory/hardware.md)
+[![UPS](https://img.shields.io/badge/UPS-900W%20Eaton-orange?style=for-the-badge)](inventory/hardware.md)
 [![License](https://img.shields.io/badge/license-CC%20BY%204.0-lightgrey?style=for-the-badge)](LICENSE)
 
 [![Network](https://img.shields.io/badge/network-UniFi-0559C9?style=flat-square&logo=ubiquiti&logoColor=white)](docs/networking.md)
