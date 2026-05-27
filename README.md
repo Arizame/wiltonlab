@@ -41,11 +41,12 @@
 
 This homelab serves three primary goals:
 
-1. **Production network** — Reliable home networking, Wi-Fi, and surveillance for daily use.
-2. **Always-on services** — Self-hosted utilities like DNS-level ad blocking and HomeKit bridging for smart home gear that doesn't natively support it.
-3. **Lab environment** — A separate playground network for learning enterprise networking (Cisco) and virtualization (Proxmox) without risking the main network.
+1. **Main Network** - Reliable home networking, Wi-Fi, and surveillance for daily use.
+2. **Home Security** - Provides smart camera access for every member in the household
+3. **Always-on services** — Self-hosted utilities like DNS-level ad blocking and HomeKit bridging for smart home gear that doesn't natively support it.
+4. **Lab environment** — A separate playground network for learning enterprise networking (Cisco) and virtualization (Proxmox) without risking the main network.
 
-Everything is housed in a single **22RU rack** backed by a **1500W Eaton UPS** for clean power and graceful shutdowns.
+Everything is housed in a single **22RU rack** backed by a **1500VA/900W Eaton UPS** for clean power and graceful shutdowns.
 
 ---
 
@@ -64,17 +65,18 @@ Live status of every component in the lab.
 | **Pi-hole** | Service | DNS / ad-block | 🟢 Online |
 | **HomeBridge** | Service | HomeKit bridge | 🟢 Online |
 | **Steam Cache** | Service | LAN game cache | 🟢 Online |
-| **Eaton UPS** | Power | 1500W battery backup | 🟢 Online |
-| **Catalyst 2960-X** | Network (Lab) | Lab L2 switch | 🟡 In Progress |
-| **Cisco 1900** | Network (Lab) | Lab L3 router | 🟡 In Progress |
+| **Eaton 5E UPS** | Power | 1500VA/900W battery backup | 🟢 Online |
+| **Catalyst 2960-X** | Network (Lab) | Lab L2 switch | 🟡 In Progress - Needs Setup |
+| **Cisco 1921** | Network (Lab) | Lab L3 router | 🟡 In Progress - Needs Setup |
 | **WIL-HV01 (4RU)** | Compute | Proxmox hypervisor | 🔵 Planned |
 | **Immich** | Service | Photo backup | 🔵 Planned |
 | **Jellyfin** | Service | Media streaming | 🔵 Planned |
 | **TrueNAS** | Service | Storage / NAS | 🔵 Planned |
 | **Windows Server VM** | VM | AD lab | 🔵 Planned |
 | **Windows Client VM** | VM | Domain client | 🔵 Planned |
+| **WIL-MC-SVR** | Compute | Old MC Server |  Decommissioning - Transferred to WIL-SER02
 
-**Legend:** 🟢 Online · 🟡 In Progress · 🔵 Planned · 🔴 Down · ⚫ Decommissioned
+**Legend:** 🟢 Online · 🟡 In Progress · 🔵 Planned · 🔴 Down · ⚫ Decommissioning/Decommissioned
 
 ---
 
@@ -82,20 +84,21 @@ Live status of every component in the lab.
 
 | U | Equipment | Purpose |
 |---|-----------|---------|
-| 22 | _Reserved_ | Future expansion |
-| 21 | Patch panel / cable management | Network distribution |
+| 22 | _Reserved_ | Empty Space, Makeshift Shelf |
+| 21 | _Reserved_ | Empty Space, Makeshift Shelf, holds eufy base |
 | 20 | **UDM Pro Max** | Main router / firewall / UniFi Protect controller |
-| 19 | **USW Pro Max** | Main L2/L3 switch |
-| 18 | _Reserved_ | — |
-| 17 | **Catalyst 2960-X** | Lab network switch (WIP) |
-| 16 | **Cisco 1900 Router** | Lab network router (WIP) |
-| 15–9 | _Available_ | — |
-| 8–5 | **4RU Server** _(planned)_ | Proxmox hypervisor |
-| 4–3 | **WIL-SER01** (HP Mini) | Docker host — Pi-hole, HomeBridge |
-| 2 | **WIL-SER02** (HP Mini) | Game server / Steam Cache |
-| 1 | **Eaton 1500W UPS** | Power protection |
+| 19 | _Patch Panels_ | Patching for everything in the house |
+| 18 | **USW Pro Max**  | Main Switch |
+| 17 | _Cable Management Brush_ | Clean management of loose cables to switch (for servers) |
+| 16 | **WIL-SER01 + WILSER02** | Both machines in 3D-Printed Mount |
+| 15–12 | Silverstone RM41-H04 (for WIL-HV01) | Case installed in rack, deciding on parts for case |
+| 11 | Free Space | Future expansion |
+| 10-9 | _2RU Drawer_ | Storage |
+| 8-6 | Free Space | Future Expansion |
+| 
+| 3-1 | **Eaton 5E 900W UPS** | Power protection (may source rackmount one if more space required)|
 
-> 📝 _Exact U positions are approximate — see [`docs/rack-layout.md`](docs/rack-layout.md) for the actual diagram._
+> 📝 _Exact U positions are subject to change as things get moved around — see [`docs/rack-layout.md`](docs/rack-layout.md) for the actual diagram._
 
 ---
 
@@ -108,8 +111,8 @@ Live status of every component in the lab.
 | Gateway | UniFi Dream Machine Pro Max | Router, firewall, NVR (UniFi Protect) | 🟢 |
 | Core Switch | UniFi Switch Pro Max | Main L2/L3 switching | 🟢 |
 | Access Switch | UniFi Flex Mini | Room-level connectivity | 🟢 |
-| Lab Switch | Cisco Catalyst 2960-X | Lab VLANs / learning | 🟡 |
-| Lab Router | Cisco 1900 Series ISR | Lab routing / learning | 🟡 |
+| Lab Switch | Cisco Catalyst 2960-X | Lab Network / learning | 🟡 |
+| Lab Router | Cisco 1900 Series ISR | Lab Network / learning | 🟡 |
 
 ### Compute
 
@@ -118,12 +121,13 @@ Live status of every component in the lab.
 | `WIL-SER01` | HP Mini PC | Ubuntu Server | Docker host — utility containers | 🟢 |
 | `WIL-SER02` | HP Mini PC | Ubuntu Server | Game server / Steam Cache | 🟢 |
 | `WIL-HV01` _(planned)_ | 4RU rackmount server | Proxmox VE | Hypervisor — VMs and LXC | 🔵 |
+| `WIL-MC-SVR`| Lenovo Thinkstation | Ubuntu Server | Old Game Server | ⚫
 
 ### Power
 
 | Device | Model | Capacity |
 |--------|-------|----------|
-| UPS | Eaton 5P / 9PX-class | 1500W |
+| UPS | Eaton 5E | 1500VA/900W |
 
 📄 **Full specs:** [`inventory/hardware.md`](inventory/hardware.md)
 
@@ -195,6 +199,7 @@ flowchart TB
 |---------|---------|:------:|
 | **Pi-hole** | Network-wide DNS + ad blocking | 🟢 |
 | **HomeBridge** | Bridges non-HomeKit devices into Apple Home (UniFi cameras, eufy Doorbell, Meross smart garage) | 🟢 |
+| **Twingate Connector | Runs Twingate 
 
 ### `WIL-SER02` — Gaming / caching
 
@@ -223,7 +228,7 @@ flowchart TB
 
 - [ ] Finish racking and cabling the Catalyst 2960-X
 - [ ] Configure base VLAN trunk between UDM Pro Max and Cisco 1900
-- [ ] IOS config / baseline for Cisco 1900 (study for CCNA-style topology)
+- [ ] IOS config / baseline for Cisco 1900 (working on CCNA)
 
 ### Mid-term
 
