@@ -1,6 +1,6 @@
 <div align="center">
 
-![Homelab Banner](.github/assets/banner.svg)
+![WiltonLab Banner](.github/assets/banner.svg)
 
 # WiltonLab - the personal homelab where possibilities are endless
 
