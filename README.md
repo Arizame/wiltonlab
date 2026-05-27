@@ -95,7 +95,6 @@ Live status of every component in the lab.
 | 11 | Free Space | Future expansion |
 | 10-9 | _2RU Drawer_ | Storage |
 | 8-6 | Free Space | Future Expansion |
-| 
 | 3-1 | **Eaton 5E 900W UPS** | Power protection (may source rackmount one if more space required)|
 
 > 📝 _Exact U positions are subject to change as things get moved around — see [`docs/rack-layout.md`](docs/rack-layout.md) for the actual diagram._
@@ -111,6 +110,7 @@ Live status of every component in the lab.
 | Gateway | UniFi Dream Machine Pro Max | Router, firewall, NVR (UniFi Protect) | 🟢 |
 | Core Switch | UniFi Switch Pro Max | Main L2/L3 switching | 🟢 |
 | Access Switch | UniFi Flex Mini | Room-level connectivity | 🟢 |
+| Access Points | Unifi U7 Pro x2 | Wi-Fi Connectivity for whole house | 🟢 |
 | Lab Switch | Cisco Catalyst 2960-X | Lab Network / learning | 🟡 |
 | Lab Router | Cisco 1900 Series ISR | Lab Network / learning | 🟡 |
 
