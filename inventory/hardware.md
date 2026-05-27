@@ -1,7 +1,5 @@
 # 🖥️ Hardware Inventory
 
-Detailed specs for every piece of gear. Fill in the blanks (`_(specify)_`) with your actual hardware as you confirm them.
-
 ---
 
 ## Network
@@ -61,31 +59,30 @@ Detailed specs for every piece of gear. Fill in the blanks (`_(specify)_`) with 
 
 ### WIL-HV01 _(planned)_
 - **Hardware:** 4RU rackmount server
-- **Chassis:** _(specify — Supermicro / Dell / custom)_
-- **CPU:** _(specify — sockets, cores, model)_
-- **RAM:** _(specify total / per channel)_
+- **Chassis:** _Silverstone RM41-H04_
+- **CPU:** _(TBD)_
+- **RAM:** _(TBD - 64-128GB?)_
 - **Storage:**
-  - Boot: _(mirrored SSD)_
-  - Data: _(HBA + drive bays for TrueNAS)_
-- **NICs:** _(onboard + any add-in cards)_
-- **GPU:** _(if any, for Jellyfin / Immich ML)_
-- **OS:** Proxmox VE _(version on install)_
+  - Boot: _(TBD)_
+  - Data: _(TBD)_
+- **NICs:** _(TBD)_
+- **GPU:** _(TBD)_
+- **OS:** Proxmox VE
 
 ---
 
 ## Power
 
-### Eaton UPS
-- **Model:** _(specify — 5P 1500i / 9PX 1500 etc.)_
-- **Capacity:** 1500W / _(specify VA)_
-- **Battery runtime:** _(specify expected runtime at typical load)_
-- **Management:** Network card? USB to UDM?
+### Eaton UPS (Unmanaged)
+- **Model:** _Eaton 5E_
+- **Capacity:** 900W / _(1500VA)_
+- **Battery runtime:** _~3 Hours - Script to shut down servers present_
 
 ---
 
 ## Rack
 
 - **Type:** 22RU
-- **Brand / model:** _(specify)_
-- **Depth:** _(specify mm)_
-- **Cooling:** _(specify — open / enclosed / fan tray)_
+- **Brand / model:** RMS
+- **Depth:** 600mm
+- **Cooling:** enclosed - in A/C room
