@@ -18,7 +18,7 @@
 [![Services](https://img.shields.io/badge/services-4%20running-success?style=flat-square)](inventory/services.md)
 
 > A personal homelab built around UniFi networking, lightweight HP mini PCs for always-on services, and a growing Proxmox-based lab environment for experimenting with virtualization, storage, and self-hosted applications.
-
+> NOTE: This is a work in progress as I am transferring everything from my old Google Docs document to Github, so not everything will be accurate.
 </div>
 
 ---
