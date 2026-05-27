@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="Homelab banner">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="WiltonLab banner">
   <defs>
     <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%" stop-color="#0b1020"/>
@@ -121,7 +121,7 @@
   <!-- Title block -->
   <g transform="translate(280, 110)">
     <text x="0" y="0" font-family="ui-monospace, 'SF Mono', Menlo, monospace" font-size="56" font-weight="700" fill="#e8ecf5" letter-spacing="-1">
-      Homelab
+      WiltonLab
     </text>
     <text x="0" y="36" font-family="ui-sans-serif, system-ui, sans-serif" font-size="18" fill="#9ca3af" letter-spacing="1">
       UniFi · Cisco · Proxmox · Docker
