@@ -1,0 +1,17 @@
+# Local-only / sensitive
+secrets/
+*.env
+.env
+.env.*
+*.key
+*.pem
+
+# Editor cruft
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Backups / temp
+*.bak
+*.tmp
