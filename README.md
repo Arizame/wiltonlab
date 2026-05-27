@@ -2,7 +2,7 @@
 
 ![Homelab Banner](.github/assets/banner.svg)
 
-# 🏠 Homelab
+# WiltonLab - the personal homelab where possibilities are endless
 
 [![Status](https://img.shields.io/badge/status-active-brightgreen?style=for-the-badge)](.)
 [![Rack](https://img.shields.io/badge/rack-22RU-blue?style=for-the-badge)](docs/rack-layout.md)
